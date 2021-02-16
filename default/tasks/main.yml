@@ -1,0 +1,12 @@
+---
+# tasks file for default
+- name: make shure all ia up to date
+  hosts: all
+  become: yes
+
+  tasks: 
+   - name: Upgrade all packages to the latest version
+     apt:
+       name: "*"
+       state: latest
+    
