@@ -1,2 +1,9 @@
 ---
 # tasks file for build
+- name: install necessary packages
+  apt: 
+    name: ['maven', 'default-jdk', 'mc'] 
+    state: present
+
+- name: build 
+  
