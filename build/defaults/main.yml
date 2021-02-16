@@ -1,2 +1,5 @@
 ---
 # defaults file for build
+- name: install jdk maven and build app 
+  hosts: build
+  become: yes
