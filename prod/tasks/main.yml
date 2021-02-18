@@ -1,2 +1,11 @@
 ---
 # tasks file for prod
+- name: install necessary packages
+  apt: 
+    name: ['tomcat9', 'default-jre', 'mc'] 
+    state: present
+
+- name: copy war file into work directory
+  copy: 
+    src: hello-1.0.war
+    dest: "{{ dest_folder }}"

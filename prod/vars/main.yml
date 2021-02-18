@@ -1,2 +1,5 @@
 ---
 # vars file for prod
+
+vars: 
+  dest_folder: /var/lib/tomcat9/webapps

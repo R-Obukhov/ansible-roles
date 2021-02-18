@@ -5,5 +5,17 @@
     name: ['maven', 'default-jdk', 'mc'] 
     state: present
 
-- name: build 
-  
+- name: clone git repo 
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    dest: "{{ role_path }}"
+    clone: yes
+
+- name: build war file
+  command: mvn -f {{ role_path }}/pom.xml clean package
+
+- name: copy war file to prod role files dir
+  copy:
+    src: "{{ role_path }}"/target/hello-1.0.war
+    dest: "{{ dest_folder }}"/helo-1.0.war
+    
