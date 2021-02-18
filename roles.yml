@@ -1,0 +1,14 @@
+---
+- name: configure build servers
+  hosts: build
+  become: yes
+  roles:
+    - default
+    - build
+
+- name: configure prod servers
+  hosts: prod
+  become: yes
+  roles:
+    - default
+    - prod 
